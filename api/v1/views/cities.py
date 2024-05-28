@@ -27,7 +27,6 @@ def handle_cities(state_id=None, city_id=None):
     else:
         raise MethodNotAllowed(list(handlers.keys()))
 
-
     def get_cities(state_id=None, city_id=None):
         '''Gets the city with the given id or all cities in
         the state with the given id.
