@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Contains a Flask web application API.
-"""
+"""Contains a Flask web application API."""
+
 import os
 from flask import Flask, jsonify
 from flask_cors import CORS
