@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-"""
-Contains a Flask web application API.
+"""Flask web application for HBNB API.
+
+This Flask application implements the API for the HBNB project. It defines
+routes for various functionalities like creating, retrieving, updating, and
+deleting resources.
+
 """
 
 import os
@@ -8,8 +12,6 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 from models import storage
 from api.v1.views import app_views
-from flasgger import Swagger
-from flasgger.utils import swag_from
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
