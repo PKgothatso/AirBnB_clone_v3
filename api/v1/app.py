@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Contains a Flask web application API."""
+"""
+Contains a Flask web application API.
+"""
 
 import os
 from flask import Flask, jsonify
@@ -10,31 +12,8 @@ from flasgger import Swagger
 from flasgger.utils import swag_from
 
 app = Flask(__name__)
-"""The Flask web application instance."""
-app.config['JSONIFY_BOLDPRINT_REGULAR'] = True
-app.url_map.strict_slashes = False
 app.register_blueprint(app_views)
 CORS(app, resources={'/*': {'origins': app_host}})
-
-app.config['SWAGGER'] = {
-    "swagger_version": "2.0",
-    "title": "Flasgger",
-    "headers": [
-        ('Access-Control-Allow-Methods', "GET, POST, PUT, DELETE, OPTIONS),
-        ('Access-Control-Allow-Origin', '*"),
-        ('Access-Control-Allow-Credentials', "true"),
-    ],
-    "specs": [
-        {
-            "title": "HBNB API",
-            "description": "AirBnB RESTful API",
-            "version": "1",
-            "endpoint": 'v1_views',
-            "route": '/v1/views',
-        }
-    ]
-}
-Swagger(app)
 
 
 @app.teardown_appcontext
