@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-'''Contains the blueprint for the API.'''
+"""
+Contains the blueprint for the API.
+
+This module is responsible for initializing the Flask blueprint by,
+defining the URL prefix and importing all view modules for the API endpoints
+"""
+
 from flask import Blueprint
 
-
 app_views = Blueprint('app_views', __name__, url_prefix='/api/v1')
-'''The blueprint for the AirBnB clone API.'''
 
 
 from api.v1.views.amenities import *

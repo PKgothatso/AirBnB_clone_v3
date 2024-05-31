@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-'''Contains the cities view for the API.'''
+'''
+Contains the cities view for the API.
+'''
+
 from flask import jsonify, request
 from werkzeug.exceptions import NotFound, MethodNotAllowed, BadRequest
 
